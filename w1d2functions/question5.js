@@ -1,4 +1,5 @@
 "use strict"
+/* eslint-disable */
 
 function convertFahrenheit(temperature) {
     let tempCelcius = (temperature - 32) * (5 / 9);

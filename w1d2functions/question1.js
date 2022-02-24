@@ -1,5 +1,10 @@
 "use strict";
-
+/**
+ * 
+ * @param {boolean} salaried - worker agent salaried or not
+ * @param {int} salesAmount - sales amount 
+ * @returns {function} - sales commission
+ */
 function computeSalesCommission(salaried, salesAmount) {
     let commission = 0;
     if (salaried) {

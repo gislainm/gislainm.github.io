@@ -1,5 +1,5 @@
 "use strict";
-
+/* eslint-disable */
 function sumDigits(num) {
     let sum = 0;
     let remNum = num;
