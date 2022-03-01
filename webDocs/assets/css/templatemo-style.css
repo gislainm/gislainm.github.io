@@ -474,6 +474,14 @@ button:hover {
     background-image: url(../images/functionExpression.png);
 }
 
+.service-item .sixth-service-icon {
+    background-image: url(../images/objects.jpeg);
+}
+
+.service-item:hover .sixth-service-icon{
+    background-image: url(../images/objects.jpeg);
+}
+
 
 /* My Work */
 
