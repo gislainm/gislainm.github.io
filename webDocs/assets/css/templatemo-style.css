@@ -482,6 +482,14 @@ button:hover {
     background-image: url(../images/objects.jpeg);
 }
 
+.service-item .seventh-service-icon {
+    background-image: url(../images/methods.png);
+}
+
+.service-item:hover .seventh-service-icon{
+    background-image: url(../images/methods.png);
+}
+
 
 /* My Work */
 
