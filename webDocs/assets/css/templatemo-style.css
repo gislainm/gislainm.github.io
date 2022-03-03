@@ -475,11 +475,11 @@ button:hover {
 }
 
 .service-item .sixth-service-icon {
-    background-image: url(../images/objects.jpeg);
+    background-image: url(../images/objects.png);
 }
 
 .service-item:hover .sixth-service-icon{
-    background-image: url(../images/objects.jpeg);
+    background-image: url(../images/objects.png);
 }
 
 .service-item .seventh-service-icon {
@@ -488,6 +488,14 @@ button:hover {
 
 .service-item:hover .seventh-service-icon{
     background-image: url(../images/methods.png);
+}
+
+.service-item .eighth-service-icon {
+    background-image: url(../images/dataTypes.png);
+}
+
+.service-item:hover .eighth-service-icon{
+    background-image: url(../images/dataTypes.png);
 }
 
 

@@ -23,4 +23,4 @@ if (salesmanWages === 'salaried') {
         console.log(`Your commission is: ${commission}`)
     }
 }
- 
+
