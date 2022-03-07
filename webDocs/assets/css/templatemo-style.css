@@ -514,6 +514,14 @@ button:hover {
     background-image: url(../images/practice.png);
 }
 
+.service-item .eleventh-service-icon {
+    background-image: url(../images/destructuring.png);
+}
+
+.service-item:hover .eleventh-service-icon{
+    background-image: url(../images/destructuring.png);
+}
+
 
 /* My Work */
 
