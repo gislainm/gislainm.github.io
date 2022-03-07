@@ -49,7 +49,7 @@ function truncate(str, maxlength) {
  * @returns {num} - the value of money in number and without the dollar sign
  */
 function extractCurrencyValue(money) {
-  const moneyValue = money.slice(1)
+  const moneyValue = money.slice(1);
   return parseInt(moneyValue);
 }
 

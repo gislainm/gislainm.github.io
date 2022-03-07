@@ -506,6 +506,14 @@ button:hover {
     background-image: url(../images/arrayMethod.png);
 }
 
+.service-item .tenth-service-icon {
+    background-image: url(../images/practice.png);
+}
+
+.service-item:hover .tenth-service-icon{
+    background-image: url(../images/practice.png);
+}
+
 
 /* My Work */
 
