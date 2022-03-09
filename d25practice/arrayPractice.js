@@ -67,15 +67,17 @@ function findMaxAges(arr) {
 }
 
 function findAverageEven(arr) {
-    return arr.filter(item => item.age % 2 === 0).map(item => item.age).reduce((sum, currentValue, index, array) => {
-        let total = sum + currentValue;
-        return total / array.length;
-    })
+    let length = 1;
+    return arr.filter(item => item.age % 2 === 0).map(item => item.age).reduce((sum, currentValue) => {
+        length++
+        return sum + currentValue;
+    }) / length;
 }
 
 function findAverageOdd(arr) {
-    return arr.filter(item => item.age % 2 !== 0).map(item => item.age).reduce((sum, currentValue, index, array) => {
-        let total = sum + currentValue;
-        return total / array.length;
-    })
+    let length = 1;
+    return arr.filter(item => item.age % 2 !== 0).map(item => item.age).reduce((sum, currentValue) => {
+        length++
+        return sum + currentValue;;
+    }) / length;
 }
