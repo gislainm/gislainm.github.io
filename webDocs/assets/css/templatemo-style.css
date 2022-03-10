@@ -530,6 +530,14 @@ button:hover {
     background-image: url(../images/spread.png);
 }
 
+.service-item .thirteenth-service-icon {
+    background-image: url(../images/callContext.png);
+}
+
+.service-item:hover .thirteenth-service-icon{
+    background-image: url(../images/callContext.png);
+}
+
 
 /* My Work */
 
