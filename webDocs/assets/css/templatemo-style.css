@@ -546,6 +546,14 @@ button:hover {
     background-image: url(../images/closures.jpeg);
 }
 
+.service-item .fifteenth-service-icon {
+    background-image: url(../images/functionIntegration.jpeg);
+}
+
+.service-item:hover .fifteenth-service-icon{
+    background-image: url(../images/functionIntegration.jpeg);
+}
+
 
 /* My Work */
 

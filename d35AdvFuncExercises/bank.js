@@ -1,7 +1,7 @@
-"use strict"
+"use strict";
 /* You need the module.exports when testing in node.  Comment it out when you send your file to the browser.
 */
-module.exports = { makeBank }; //add all of your function names here that you need for the node mocha tests
+//module.exports = { makeBank }; //add all of your function names here that you need for the node mocha tests
 
 
 /* 2.	In the following code the transactionsDB is publicly accessible to any code that has access to the bank object.  
@@ -18,8 +18,8 @@ function makeBank() {
         { customerId: 2, customerTransactions: [10, 10, -10] },
         { customerId: 3, customerTransactions: [5, -5, 55] }];
 
-    makeBank.getBalance = function (id) {
-        const customer = transactionsDB.find(customer => customer.customerId === id);
+    makeBank.getBalance = function (idx) {
+        const customer = transactionsDB.find(customer => customer.customerId === idx);
         let balance = 0;
         for (const trans of customer.customerTransactions) { balance += trans; }
         return balance;
