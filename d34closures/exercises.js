@@ -31,12 +31,19 @@
 // let counter = makeCounter();
 // console.log(counter); // 1
 
-let x = 1;
+// let x = 1;
 
-function func() {
-    console.log(x); // ? 
-    console.log(y);
-    let y = 2;
+// function func() {
+//     console.log(x); // ? 
+//     console.log(y);
+//     let y = 2;
    
+// }
+// func();
+
+function sum(num1){
+return function(num2){
+    return num1 + num2;
 }
-func();
+}
+console.log(sum(4)(-2))
