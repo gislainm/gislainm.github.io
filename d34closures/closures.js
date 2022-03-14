@@ -62,7 +62,7 @@ function makeArmy() {
     };
     shooters.push(shooter); // and add it to the array
     i++;
-  };
+  }
   // ...and return the array of shooters
   return shooters;
 }

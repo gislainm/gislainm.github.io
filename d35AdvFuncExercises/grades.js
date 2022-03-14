@@ -24,6 +24,7 @@ quiz.students = [{ sid: 10, answers: [{ qid: 2, ans: "b" }, { qid: 3, ans: "a" }
 { sid: 12, answers: [{ qid: 3, ans: "b" }, { qid: 2, ans: "a" }, { qid: 1, ans: "d" }] }];
 quiz.key = [{ qid: 1, ans: "b" }, { qid: 2, ans: "a" }, { qid: 3, ans: "b" }];
 
+
 /**
  * 
  * @param {Object} ans1 is an answer object
@@ -31,8 +32,18 @@ quiz.key = [{ qid: 1, ans: "b" }, { qid: 2, ans: "a" }, { qid: 3, ans: "b" }];
  * @returns {number} difference of the identifiers
  */
 function answerComparator(ans1, ans2) {
-//IMPLEMENT THIS
+    let grade = [];
+    let score = 0;
+    for (let elem of quiz.students.answers) {
+        for (let ans of quiz.key) {
+            if (elem.qid === ans.qid && elem.ans === ans.ans)
+                score++;
+        }
+        grade.push(score);
+    }
+    return grade;
 }
+
 
 /**
  * 
@@ -43,19 +54,39 @@ function answerComparator(ans1, ans2) {
  * compare them against key and add up matches
  */
 quiz.scoreStudent = function (sid) {
-//IMPLEMENT THIS
+    let studentObj = {};
+    let score = 0;
+    for (let student of this.students) {
+        if (student.sid === sid) {
+            studentObj = student;
+        }
+    }
+    studentObj.answers.sort((aaa, bbb) => aaa.qid - bbb.qid);
+    for (let i = 0; i < studentObj.answers.length; i++) {
+        if (studentObj.answers[i].ans === quiz.key[i].ans) {
+            score++;
+        }
+    }
+    return score;
+
 };
 
 /**
  * @returns {number} average score of all students
  * go through list of students and get score of each, then the average
  */
-quiz.getAverage = function(){
-//IMPLEMENT THIS
+quiz.getAverage = function () {
+    let grades = [];
+    let total = 0;
+    for (let element of this.students) {
+        grades.push(this.scoreStudent(element.sid));
+        total +=this.scoreStudent(element.sid);
+    }
+    return total/grades.length;
 
 };
 
 
 
 /* comment out when running in browser */
-module.exports = {quiz}; 
+module.exports = { quiz }; 
