@@ -562,6 +562,14 @@ button:hover {
     background-image: url(../images/prototypeInheritance.png);
 }
 
+.service-item .seventeenth-service-icon {
+    background-image: url(../images/final.png);
+}
+
+.service-item:hover .seventeenth-service-icon{
+    background-image: url(../images/final.png);
+}
+
 
 /* My Work */
 

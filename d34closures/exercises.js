@@ -37,13 +37,30 @@
 //     console.log(x); // ? 
 //     console.log(y);
 //     let y = 2;
-   
+
 // }
 // func();
 
-function sum(num1){
-return function(num2){
-    return num1 + num2;
-}
+function sum(num1) {
+    return function (num2) {
+        return num1 + num2;
+    }
 }
 console.log(sum(4)(-2))
+
+function makeCounter() {
+    let count = 0;
+    return function (increment = 1) {
+        if (increment <= 3) {
+            count = count + increment;
+            return count;
+        } else if (increment > 3) {
+            return "Warning: increment was by value greater than 3"
+        }
+
+    };
+}
+
+let counter = makeCounter();
+
+console.log(counter(4));
