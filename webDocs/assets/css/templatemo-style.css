@@ -570,6 +570,13 @@ button:hover {
     background-image: url(../images/final.png);
 }
 
+.service-item .eighteenth-service-icon {
+    background-image: url(../images/myStory.png);
+}
+
+.service-item:hover .eighteenth-service-icon{
+    background-image: url(../images/myStory.png);
+}
 
 /* My Work */
 
