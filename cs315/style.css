@@ -26,9 +26,9 @@ h4{
     text-decoration: none;
     
 }
-.link:visited{
-    color:red;
-}
+/* /* .link:visited{
+    color:red; 
+} */
 .link:hover{
     color: pink;
     text-decoration: underline;
