@@ -1,28 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>calculator</title>
 </head>
+
 <body>
     <div>
         <p>First Value</p>
         <p>
-            <input type="text" id="firstValue">
+            <input type="number" id="firstValue" value="" onfocus="this.value=''">
         </p>
         <p>Second Value</p>
         <p>
-            <input type="text" id="secondValue">
+            <input type="number" id="secondValue" value="" onfocus="this.value=''">
         </p>
-        <p>Operations:</p>
-        <span> 
-            <input type="button" value="+">
-            <input type="button" value="-">
-            <input type="button" value="*">
-        </span>
-        
+        <p>Operations:<br><br>
+            <span>
+                <input type="button" value="+" onclick="add()">
+                <input type="button" value="-" onclick="substract()">
+                <input type="button" value="*" onclick="multiply()">
+            </span>
+        </p>
+        <p>
+            <span>Results</span><br><br>
+            <span id="result"></span>
+        </p>
     </div>
+
+    <script>
+        function add() {
+            let num1 = Number((document.getElementById("firstValue")).value);
+            let num2 = Number((document.getElementById("secondValue")).value);
+            let sum = num1 + num2;
+            document.getElementById("result").innerText = sum;
+        }
+
+        function substract() {
+            let num1 = Number((document.getElementById("firstValue")).value);
+            let num2 = Number((document.getElementById("secondValue")).value);
+            let subValue = num1 - num2;
+            document.getElementById("result").innerText = subValue;
+        }
+        function multiply() {
+            let num1 = Number((document.getElementById("firstValue")).value);
+            let num2 = Number((document.getElementById("secondValue")).value);
+            let product = num1 * num2;
+            document.getElementById("result").innerText = product;
+        }
+    </script>
 </body>
+
 </html>

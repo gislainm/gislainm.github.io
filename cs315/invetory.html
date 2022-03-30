@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory</title>
+    <link rel="stylesheet" href="myStyle.css">
+</head>
+
+<body>
+    <div>
+        <p>
+            <span>Item Name:</span><br>
+            <input type="text" id="name" value="" onfocus="this.value=''">
+        </p>
+        <p>
+            <span>Item Category:</span><br>
+            <input type="text" id="category" value="" onfocus="this.value=''">
+        </p>
+        <p>
+            <span>Quantity:</span><br>
+            <input type="number" id="quantity" value="" onfocus="this.value=''">
+        </p>
+        <p><input type="button" id="button" value="Add" onclick="add()"></p>
+    </div>
+    <div>
+        <table id="myTable">
+            <tr>
+                <th>Product Name</th>
+                <th>Category</th>
+                <th>Quantity</th>
+            </tr>
+
+        </table>
+    </div>
+    <script>
+        function add() {
+            let itemName = (document.getElementById("name")).value;
+            let category = (document.getElementById("category").value);
+            let quantity = (document.getElementById("quantity")).value
+            let table = document.getElementById("myTable");
+            let newRow = table.insertRow(-1);
+            let cell1 = newRow.insertCell(0);
+            let cell2 = newRow.insertCell(1);
+            let cell3 = newRow.insertCell(2);
+            cell1.innerHTML = itemName;
+            cell2.innerHTML = category;
+            cell3.innerHTML = quantity;
+        }
+    </script>
+</body>
+
+</html>
