@@ -1,3 +1,6 @@
+body{
+    margin:40px;
+}
 #myTable{
     border-collapse: collapse;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -30,4 +33,11 @@ tr:nth-child(even){
     width: 10%;
     border-radius: 5px;
     border-color: rgb(15, 189, 15);
+}
+input{
+    width:100%;
+    padding:6px;
+    border-style: solid;
+    border-color:rgb(192, 189, 189);
+    border-radius:5px;
 }
