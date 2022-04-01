@@ -6,13 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>List Creator</title>
-    <script>
-        function add() {
-            let newValue = document.getElementById("input").value;
-            document.getElementById("output").innerHTML += newValue + '\n';
-            newValue = " ";
-        }
-    </script>
+    <script src="./w1d4/listCreator.js"></script>
 </head>
 
 <body>
@@ -28,7 +22,7 @@
 
         </p>
         <p>
-            <input type="button" value="Click to add" onclick="add()">
+            <input type="button" value="Click to add" id="add">
         </p>
     </div>
 </body>

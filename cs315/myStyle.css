@@ -1,5 +1,5 @@
 body{
-    margin:40px;
+    margin:100px;
 }
 #myTable{
     border-collapse: collapse;
@@ -23,10 +23,10 @@ padding:6px;
 tr:nth-child(even){
     background-color: #dddddd;
 }
-#button{
+.bodyButton{
     background-color: rgb(15, 189, 15);
     position:relative;
-    margin-left: 50%;
+    margin-left: 100px;
     color:white;
     padding:8px;
     font-size: 11px;
@@ -40,4 +40,7 @@ input{
     border-style: solid;
     border-color:rgb(192, 189, 189);
     border-radius:5px;
+}
+.button{
+    background-color: rgb(133, 38, 136);
 }
