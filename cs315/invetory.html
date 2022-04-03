@@ -24,11 +24,22 @@
             <input type="text" id="quantity" value="" onfocus="this.value=''"><br><br>
         </div>
         <div>
-            <span>Ratings (1-5):</span><br>
-            <input type="number" id="rating" min="1" max="5" steps="5" value="" onfocus="this.value=''"><br><br>
+            <span>Ratings:</span><br>
+            <input type="number" id="rating" min="1" max="10" steps="10" placeholder="1-10" value=""
+                onfocus="this.value=''"><br><br>
         </div>
         <div><input type="button" id="addButton" class="bodyButton" value="Add">
-            <input type="button" id="saveButton" class="bodyButton" value="Save"><br><br>
+            <input type="button" id="saveButton" class="bodyButton" value="Save">
+            <select id="sortDropdown">
+                <option value="" disabled selected>Sort By...</option>
+                <option value="name">Name</option>
+                <option value="quantity">Quantity</option>
+            </select>
+            <select id="filterDropdown">
+                <option value="" disabled selected>Filter By...</option>
+                <option value="filterQ">Quantity > 100</option>
+                <option value="filterR">Rating > 4</option>
+            </select><br><br>
         </div>
     </div>
     <div>

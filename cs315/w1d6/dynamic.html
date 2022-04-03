@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>One</li>
+    </ul>
+    <div>
+        <button>Add Row</button>
+        <button>Remove Rown</button>
+    </div>
+    <script>
+        let addButton = document.getElementsByTagName("button")[0];
+        let removeButton = document.getElementsByTagName("button")[1];
+        window.onload = function () {
+            addButton.onclick = add;
+            removeButton.onclick = remove;
+        }
+
+        function add() {
+            let list = document.getElementsByTagName("ul")[0];
+            let newItem = document.createElement("li");
+            newItem.innerHTML = "new Item";
+            list.append(newItem);
+        }
+
+        function remove() {
+            let list = document.getElementsByTagName("ul")[0];
+            // let listElements = list.children;
+            // let lastIndex = listElements.length - 1;
+            // let lastrow = listElements[lastIndex];
+            //lastrow.remove();
+            list.lastChild.remove();
+        }
+
+    </script>
+</body>
+
+</html>
