@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plants</title>
+    <style>
+        div>label {
+            margin-right: 100px;
+        }
+
+        div {
+            margin-bottom: 30px;
+        }
+
+        #source {
+            margin-right: 30px;
+            padding: 5px;
+        }
+
+        #destination {
+            margin-left: 30px;
+            padding: 5px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            let sourceButton = document.getElementById("sourceButton");
+            let destinationButton = document.getElementById("destinationButton");
+            let addButton = document.getElementById("addButton");
+            let sortButton = document.getElementById("sortButton");
+            let destination = document.getElementById("destination");
+            addButton.onclick = addToSource;
+            sourceButton.onclick = transferFromSource;
+            destinationButton.onclick = transferFromDestination
+            sortButton.onclick = sortPlants;
+        }
+
+        let plantsInSource = [];
+        let plantsInDestination = [];
+        let sourceField;
+        let destinationField;
+        function addToSource() {
+            sourceField = document.getElementById("source");
+            let inputText = document.getElementById("inputText");
+            plantsInSource.push(inputText.value);
+            sourceField.innerHTML += "<option>" + inputText.value + "</option>";
+
+
+        }
+
+        function transferFromSource() {
+            destinationField = document.getElementById("destination");
+            let selectedOptions = [];
+            for (let option of sourceField.children) {
+                if (option.selected) {
+                    selectedOptions.push(option);
+                }
+            }
+            for (let option of selectedOptions) {
+                destinationField.innerHTML += option.outerHTML;
+                plantsInDestination.push(option.innerHTML);
+                for (let element of plantsInSource) {
+                    if (element == option.innerHTML) {
+                        plantsInSource.splice(plantsInSource.indexOf(option.innerHTML), 1);
+                    }
+                }
+                option.remove();
+            }
+        }
+
+        function transferFromDestination() {
+            let selectedOptions = [];
+            for (let option of destinationField.options) {
+                if (option.selected) {
+                    selectedOptions.push(option);
+                }
+            }
+            for (let option of selectedOptions) {
+                sourceField.innerHTML += option.outerHTML;
+                plantsInSource.push(option.innerHTML);
+                for (let element of plantsInDestination) {
+                    if (element == option.innerHTML) {
+                        plantsInDestination.splice(plantsInDestination.indexOf(option.innerHTML), 1);
+                    }
+                }
+                option.remove();
+            }
+        }
+
+        function sortPlants() {
+            plantsInDestination.sort((a, b) => {
+                if (a > b) {
+                    return 1;
+                } else if (a < b) {
+                    return -1;
+                } else {
+                    return 0;
+                }
+            })
+            destinationField.innerHTML = "";
+            for (let element of plantsInDestination) {
+                destinationField.innerHTML += "<option>" + element + "</option>";
+            }
+            plantsInSource.sort((a, b) => {
+                if (a > b) {
+                    return 1;
+                } else if (a < b) {
+                    return -1;
+                } else {
+                    return 0;
+                }
+            })
+            sourceField.innerHTML = "";
+            for (let element of plantsInSource) {
+                sourceField.innerHTML += "<option>" + element + "</option>";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Add Plants</h1>
+    <div id="input">
+        Plant Name:
+        <input type="text" value="" onfocus="this.value=''" id="inputText">
+        <input type="button" value="Add" id="addButton">
+    </div>
+    <div id="boxTitle">
+        <label>Source</label>
+        <label>Destination</label>
+
+    </div>
+    <div>
+        <select id="source" multiple>
+
+
+        </select>
+        <input id="sourceButton" type="button" value=">">
+        <input id="destinationButton" type="button" value="<">
+        <select id="destination" multiple>
+
+        </select>
+    </div>
+    <div>
+        <input id="sortButton" type="button" value="Sort">
+    </div>
+    <div>
+        <input type="radio"/> Name
+        <input type="radio"
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .one {
+            background-color: aquamarine;
+            float: left;
+            width: 100px;
+            height: 200px;
+            text-align: center;
+            line-height: 100px;
+            margin: auto;
+        }
+
+        .two {
+            background-color: aquamarine;
+            float: left;
+            padding: 60px;
+            text-align: center;
+            margin-right: 10px;
+        }
+
+        .three {
+            background-color: aquamarine;
+            float: right;
+            padding: 60px;
+            text-align: center;
+        }
+
+        div {
+            display: flow-root;
+
+        }
+
+        .container {
+            margin: 10px
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="one">Float</div>
+        This sentence appears next to the float
+    </div>
+    <div class="container">
+        <div class="two">Left</div>
+        <div class="three">Right</div>
+        This text will appear in the middle
+    </div>
+
+</body>
+
+</html>

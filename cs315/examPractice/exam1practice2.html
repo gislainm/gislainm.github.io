@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enrollment</title>
+    <style>
+        body {
+            margin: 40px;
+        }
+
+        label {
+            width: 15%;
+            display: inline-block;
+        }
+
+        label+input {
+            padding: 3px;
+        }
+
+        input {
+            text-align: left;
+        }
+
+        div,
+        h1 {
+            margin: 20px
+        }
+
+        /* input[type="text"]{
+            border-radius: 30px;
+        } */
+    </style>
+    <script>
+        window.onload = function () {
+            let submitButton = document.getElementById("submitButton");
+            submitButton.onclick = submit;
+            let countrySelect = document.getElementById("countrySelect");
+            countrySelect.onchange = display;
+        }
+
+        let statesDiv;
+        function display() {
+            statesDiv = document.getElementById("states")
+            for (let option of this.options) {
+                if (option.selected) {
+                    if (option.innerHTML == "USA") {
+                        statesDiv.style.display = "";
+                    } else if (option.innerHTML == "Other") {
+                        statesDiv.style.display = "none";
+                    }
+                }
+            }
+        }
+        function submit() {
+            this.value = "Done";
+            let name = document.getElementById("name");
+            name.replaceWith(name.value);
+            let zipcode = document.getElementById("zipcode");
+            zipcode.replaceWith(zipcode.value);
+            let countrySelect = document.getElementById("countrySelect");
+            let selectedCountry;
+            for (let option of countrySelect.options) {
+                if (option.selected) {
+                    selectedCountry = option.innerHTML;
+                }
+            }
+            countrySelect.replaceWith(selectedCountry);
+            let stateOptions = document.getElementById("stateOptions");
+            let selectedState;
+            for (let option of stateOptions) {
+                if (option.selected) {
+                    selectedState = option.innerHTML;
+                }
+            }
+            stateOptions.replaceWith(selectedState);
+        }
+
+    </script>
+</head>
+
+<body>
+    <h1>Enrollment</h1>
+    <div>
+        <label>Name </label>
+        <input type="text" placeholder="Enter Name" id="name" />
+    </div>
+    <div>
+        <label>Select Country</label>
+        <select id="countrySelect">
+            <option>USA</option>
+            <option>Other</option>
+        </select>
+    </div>
+    <div id="states">
+        <label>Select State</label>
+        <select id="stateOptions">
+            <option>Alabama</option>
+            <option>Alaska</option>
+            <option>California</option>
+        </select>
+    </div>
+    <div>
+        <label>Zip Code</label>
+        <input type="text" placeholder="Enter Zip" id="zipcode" />
+    </div>
+    <div><input type="button" value="Submit" id="submitButton" /></div>
+</body>
+
+
+</html>
