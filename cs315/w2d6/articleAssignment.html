@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article Flex</title>
+    <style>
+        #page {
+            display: flex;
+            flex-flow: row wrap;
+            column-gap: 1%;
+            border-left: solid;
+            border-bottom: solid;
+            padding: 0.5%;
+            margin-top: 10%;
+        }
+
+        #page>* {
+            background-color: aqua;
+            width: 25%;
+            padding: 1%;
+
+        }
+
+        #third {
+            flex: 1;
+        }
+
+        .thirdTab {
+            display: flex;
+            flex-wrap: wrap;
+            column-gap: 2%;
+            row-gap: 20px;
+        }
+
+        .thirdTab>* {
+            background-color: whitesmoke;
+            width: 20%;
+            padding: 1%;
+            text-align: center;
+            flex-grow: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="page">
+        <div id="first">
+            <h4>First article</h4>
+            Lorem ipsum dolor sit amet. Et accusantium consequatur qui voluptate excepturi At harum veritatis qui quas
+            totam aut molestiae molestiae At voluptas voluptatem et consequatur assumenda? Qui incidunt sunt ut suscipit
+            minima est molestiae vero rem nemo aliquam ea voluptatem commodi ea voluptatum voluptatem et enim
+            laboriosam. Et architecto obcaecati sit explicabo quae ad nisi labore et excepturi sint At similique
+            accusamus ab dolores laboriosam. Vel maxime officiis quo nobis galisum ut officiis doloremque?
+        </div>
+        <div id="second">
+            <h4>Second article</h4>
+            Qui amet rerum aut enim voluptate et praesentium tempore aut velit suscipit aut voluptatem cumque? Ab
+            perferendis aspernatur in nesciunt molestiae vel saepe quisquam qui deserunt cupiditate ea quia obcaecati
+            aut possimus ipsa qui molestiae enim. Aut mollitia sequi et facilis quia ut inventore accusantium qui unde
+            sint qui sunt voluptatem est sequi autem sed quod consectetur.Ut totam sunt ea magnam explicabo qui dolorem
+            inventore? Est alias doloribus et delectus similique sed aliquam quasi in incidunt labore sed ratione cumque
+            quo voluptatum nihil et repellat consequatur.
+        </div>
+        <div id="third">
+            <div class="thirdTab">
+                <div>Smile</div>
+                <div>Laugh</div>
+                <div>Wink</div>
+                <div>Shrug</div>
+                <div>Blush</div>
+            </div>
+
+            <p>Lorem ipsum dolor sit amet. Ut odit molestiae qui molestiae quas et quia consequatur ea minus
+                perferendis
+                est tenetur quaerat sed soluta veritatis eos laboriosam aliquid. Ex quod architecto ut distinctio quia
+                et
+                dolor aliquam aut fuga tempore. Hic cumque deleniti vel sequi aperiam ex ipsam saepe sit laborum aliquam
+                sit
+                recusandae aperiam quo velit harum qui nihil omnis?</p>
+            <p>Qui exercitationem molestiae eum internos maiores est culpa totam eos totam modi. Et enim consequuntur in
+                galisum eaque est molestias officiis. Et quod animi sit fugiat minus eos velit corrupti non earum
+                dolores!</p>
+            <p>Eos impedit vero id dolor molestias qui porro sunt sit dolor rerum aut porro dignissimos. Ea aliquid quia
+                et
+                dolorem fugit quo dolores beatae qui quibusdam voluptatem ut velit dignissimos est quia laudantium. Quo
+                fuga
+                minus aut vitae repellendus aut neque autem sed labore labore cum quia nobis et magnam libero in aliquam
+                itaque.</p>
+        </div>
+    </div>
+</body>
+
+</html>

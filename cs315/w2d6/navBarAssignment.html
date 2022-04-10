@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NavBar Assignment</title>
+    <style>
+        #page {
+            display: flex;
+            flex-flow: column wrap;
+            row-gap: 50px;
+            background-color: rgb(195, 199, 199);
+            padding: 1%;
+            margin-top: 10%;
+        }
+
+        #page>* {
+            background-color: black;
+            color: white;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding-left: 10%;
+            padding-right: 10%
+        }
+
+        #second>.logo {
+            order: 2;
+            margin-left: auto;
+        }
+
+        #second>.contact {
+            margin-left: 4%;
+        }
+
+        #second {
+            justify-content: flex-start;
+        }
+
+        #third {
+            justify-content: flex-end;
+        }
+
+        #third>.logo {
+            margin-right: auto;
+        }
+
+        #third>.contact {
+            margin-left: 4%;
+        }
+
+        .contact {
+            background-color: #009cde;
+            padding: 7px;
+            padding-right: 20px;
+            padding-left: 20px;
+            border-radius: 17px;
+        }
+
+        .list {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            width: 15%
+        }
+    </style>
+</head>
+
+<body>
+    <div id="page">
+        <div id="first">
+            <div class="logo">LOGOBAKERY</div>
+            <div class="list">
+                <div>Services</div>
+                <div>Projects</div>
+                <div>About</div>
+            </div>
+            <div class="contact">Contact</div>
+        </div>
+        <div id="second">
+            <div class="logo">LOGOBAKERY</div>
+            <div class="list">
+                <div>Services</div>
+                <div>Projects</div>
+                <div>About</div>
+            </div>
+            <div class="contact">Contact</div>
+        </div>
+        <div id="third">
+            <div class="logo">LOGOBAKERY</div>
+            <div class="list">
+                <div>Services</div>
+                <div>Projects</div>
+                <div>About</div>
+            </div>
+            <div class="contact">Contact</div>
+        </div>
+    </div>
+</body>
+
+</html>
