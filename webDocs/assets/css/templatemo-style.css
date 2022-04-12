@@ -611,6 +611,14 @@ button:hover {
     background-image: url(../images/flexbox.png);
 }
 
+.service-item .twentythird-service-icon {
+    background-image: url(../images/grid.png);
+}
+
+.service-item:hover .twentythird-service-icon {
+    background-image: url(../images/grid.png);
+}
+
 /* My Work */
 
 section.my-work .section-heading {

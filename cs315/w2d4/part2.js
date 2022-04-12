@@ -37,5 +37,21 @@ function printNameOfNode(node) {
     }
 }
 
+function printArrayOfNode(node) {
+    let nodeArr = [];
+    if (!node) {
+        return [];
+    } else {
+        if (node.children == null) {
+            nodeArr = nodeArr.concat([node.name + ": " + node.value])
+        } else {
+            nodeArr = nodeArr.concat([node.name + ": " + node.value]);
+            for (let element of node.children) {
+                nodeArr = nodeArr.concat(printArrayOfNode(element));
+            }
+        }
+        return nodeArr;
+    }
+}
 
-printNameOfNode(node1);
+console.log(printArrayOfNode(node1));
