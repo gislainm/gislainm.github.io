@@ -52,19 +52,19 @@ function containingTree(tree, target) {
 // console.log(containingTree(Abe, "Lisa"));
 
 //Question 4
-function ListNode(name) {
-    this.name = name;
-    this.next = null;
-}
-const maggie = new ListNode("Maggie");
-const lisa = new ListNode("Lisa");
-lisa.next = maggie;
-const bart = new ListNode("Bart");
-bart.next = lisa;
-const homer = new ListNode("Homer");
-homer.next = bart;
-const abe = new ListNode("Abe");
-abe.next = homer;
+// function ListNode(name) {
+//     this.name = name;
+//     this.next = null;
+// }
+// const maggie = new ListNode("Maggie");
+// const lisa = new ListNode("Lisa");
+// lisa.next = maggie;
+// const bart = new ListNode("Bart");
+// bart.next = lisa;
+// const homer = new ListNode("Homer");
+// homer.next = bart;
+// const abe = new ListNode("Abe");
+// abe.next = homer;
 //console.log(abe);
 
 //Question 5
@@ -122,17 +122,34 @@ function reverseNode(node) {
 // console.log(treeModifier(Abe, reverseNode))
 
 //Question 7
+let valuesArr = [];
 function treeCollector(tree) {
-    let valuesArr = []
-    if (tree.children == null) {
-        return valuesArr.push(tree.name)
-    } else {
+    if (Array.isArray(tree.children)) {
         valuesArr.push(tree.name);
         for (let element of tree.children) {
-            valuesArr.concat[treeCollector(element)];
+            treeCollector(element);
         }
-        return valuesArr;
+    } else {
+        valuesArr.push(tree.name);
     }
-
+    return valuesArr;
 }
-console.log(treeCollector(Abe));
+//console.log(treeCollector(Abe));
+
+function ListNode(value) {
+    this.name = value;
+}
+
+function generateList(root) {
+    if (root.children == null || root.children.length == 0)
+        return new ListNode(root.name);
+    let linkedList = new ListNode(root.name);
+    let list = linkedList;
+    for (let eachChild of root.children) {
+        list.next = generateList(eachChild);
+        list = list.next;
+    }
+    return linkedList;
+}
+
+console.log(JSON.stringify(generateList(Abe)))
