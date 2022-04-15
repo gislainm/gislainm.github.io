@@ -27,13 +27,17 @@ function contains(tree, target) {
         return true;
     } else if (Array.isArray(tree.children)) {
         for (let element of tree.children) {
-            return contains(element, target);
+            let result = contains(element, target);
+            if (result == true) {
+                return true;
+            }
         }
+        return false;
     } else {
         return false;
     }
 }
-console.log(contains(Abe, "Maggie"));
+//console.log(contains(Abe, "Gislain"));
 
 //Question 3
 function containingTree(tree, target) {
@@ -49,7 +53,7 @@ function containingTree(tree, target) {
         return newTree;
     }
 }
-// console.log(containingTree(Abe, "Lisa"));
+//console.log(containingTree(Abe, "Lisa"));
 
 //Question 4
 // function ListNode(name) {
@@ -66,6 +70,23 @@ function containingTree(tree, target) {
 // const abe = new ListNode("Abe");
 // abe.next = homer;
 //console.log(abe);
+
+//Question 4
+function ListNode(value) {
+    this.name = value;
+}
+
+function generateList(root) {
+    if (root.children == null || root.children.length == 0)
+        return new ListNode(root.name);
+    let linkedList = new ListNode(root.name);
+    let list = linkedList;
+    for (let eachChild of root.children) {
+        list.next = generateList(eachChild);
+        list = list.next;
+    }
+    return linkedList;
+}
 
 //Question 5
 function findListNode(list, target) {
@@ -84,7 +105,7 @@ function findListNode(list, target) {
     return containingList;
 }
 //console.log(abe)
-//console.log(findListNode(abe, "Gislain"));
+//console.log(findListNode(Abe, "Abe"));
 
 //Question 6
 function treeModifier(tree, modifierFunc) {
@@ -136,20 +157,6 @@ function treeCollector(tree) {
 }
 //console.log(treeCollector(Abe));
 
-function ListNode(value) {
-    this.name = value;
-}
 
-function generateList(root) {
-    if (root.children == null || root.children.length == 0)
-        return new ListNode(root.name);
-    let linkedList = new ListNode(root.name);
-    let list = linkedList;
-    for (let eachChild of root.children) {
-        list.next = generateList(eachChild);
-        list = list.next;
-    }
-    return linkedList;
-}
 
-console.log(JSON.stringify(generateList(Abe)))
+// console.log(JSON.stringify(generateList(Abe)))
