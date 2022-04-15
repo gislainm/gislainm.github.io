@@ -15,6 +15,45 @@
         .col-md {
             border: 1px solid grey;
         }
+
+        .wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            background-color: pink;
+            padding: 10px;
+            grid-gap: 5px;
+        }
+
+        .box {
+            background-color: grey;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .a {
+            grid-column: 1/5;
+            grid-row: 1/2;
+        }
+
+        .b {
+            grid-column: 1/2;
+            grid-row: 2/3;
+        }
+
+        .c {
+            grid-column: 1/5;
+            grid-row: 3/4;
+        }
+
+        .d {
+            grid-column: 4/5;
+            grid-row: 4/5;
+        }
+
+        .e {
+            grid-column: 1/5;
+            grid-row: 5/6;
+        }
     </style>
 </head>
 
@@ -36,6 +75,7 @@
         <div class="col-4 col-md-4">.col-6 .col-md-4</div>
     </div>
     <div class="callout">...</div>
+    <span></span>
     <!-- <div class="row">
         <div class="col-4 col-md-8">.col-12 .col-md-8</div>
         <div class="col-4 col-md-4">.col-6 .col-md-4</div>
@@ -60,6 +100,19 @@
  <input class="form-control form-control-lg" type="text" placeholder=".form-control-lg" aria-label=".form-control-lg example">
 <input class="form-control" type="text" placeholder="Default input" aria-label="default input example">
 <input class="form-control form-control-sm" type="text" placeholder=".form-control-sm" aria-label=".form-control-sm example"> -->
+
+    <div style="background-color: red;width:200px;height:200px">
+        <div style="background-color:black;float:left; width: 50px; height: 50px;"></div>
+        <div style="background-color:blue;float:right;width:50px;height:50px"></div>
+    </div>
+
+    <div class="wrapper">
+        <div class="box a">A</div>
+        <div class="box b">B</div>
+        <div class="box c">C</div>
+        <div class="box d">D</div>
+        <div class="box e">E</div>
+    </div>
 </body>
 
 </html>

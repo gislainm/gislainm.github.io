@@ -33,7 +33,7 @@ function contains(tree, target) {
         return false;
     }
 }
-//console.log(contains(Abe, "Gislain"));
+console.log(contains(Abe, "Maggie"));
 
 //Question 3
 function containingTree(tree, target) {

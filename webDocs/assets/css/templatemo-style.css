@@ -627,6 +627,14 @@ button:hover {
     background-image: url(../images/bootstrap.png);
 }
 
+.service-item .twentyfifth-service-icon {
+    background-image: url(../images/forms.png);
+}
+
+.service-item:hover .twentyfifth-service-icon {
+    background-image: url(../images/forms.png);
+}
+
 /* My Work */
 
 section.my-work .section-heading {
