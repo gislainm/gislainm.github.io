@@ -1,0 +1,80 @@
+body{
+    margin:100px;
+}
+#myTable{
+    border-collapse: collapse;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    width:100%;
+
+}
+th{
+    background-color: blue;
+    color:white;
+    border:1px solid hsl(0, 1%, 21%);
+    text-align: left;
+    padding:8px;
+}
+tr td{
+text-align: left;
+border:1px solid hsl(0, 1%, 21%);
+padding:6px;
+
+}
+tr:nth-child(even){
+    background-color: #dddddd;
+}
+
+tr:hover{
+    background-color: rgb(17, 209, 17);
+}
+.bodyButton{
+    background-color: rgb(15, 189, 15);
+    position:relative;
+    margin-left: 100px;
+    color:white;
+    padding:8px;
+    font-size: 11px;
+    width: 10%;
+    border-radius: 5px;
+    border-color: rgb(15, 189, 15);
+}
+input{
+    width:100%;
+    padding:6px;
+    border-style: solid;
+    border-color:rgb(192, 189, 189);
+    border-radius:5px;
+}
+.button{
+    background-color: rgb(133, 38, 136);
+}
+
+.bodyText{
+    background-color: orange;
+    margin-left: 50px;
+    padding:4px;
+    font-size: 15px;
+    color:white
+}
+#filterDropdown{
+    background-color: orange;
+    position:relative;
+    margin-left: 100px;
+    color:white;
+    padding:8px;
+    font-size: 11px;
+    width: 10%;
+    border-radius: 5px;
+    border-color: orange;
+}
+#sortDropdown{
+    background-color: orange;
+    position:relative;
+    margin-left: 100px;
+    color:white;
+    padding:8px;
+    font-size: 11px;
+    width: 10%;
+    border-radius: 5px;
+    border-color: orange;
+}

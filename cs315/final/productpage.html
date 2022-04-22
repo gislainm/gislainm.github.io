@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+    <style>
+        .header {
+            padding-top: 15px;
+            padding-left: 15px;
+            padding-right: 25px;
+            display: flex;
+            background-color: rgb(20, 0, 23);
+        }
+
+        .shoppingCart {
+            display: flex;
+            margin-left: 10%;
+            margin-right: 20px;
+
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: scale-down;
+        }
+
+        .item {
+            margin: 2%;
+            padding: 2%;
+            display: grid;
+            grid-template-columns: 1fr 35% 20%;
+            gap: 2%;
+            border-bottom: solid 5px whitesmoke;
+        }
+
+        #addCart {
+            background: #FFD814;
+            border-color: #FCD200;
+            border-style: solid;
+            border-width: 1px;
+            border-radius: 20px;
+            padding: 5px;
+            font-size: 14px;
+            color: #0F1111;
+            margin-bottom: 8px !important;
+            width: 100%;
+        }
+
+        #shopNow {
+            background: orange;
+            border-color: orange;
+            border-style: solid;
+            border-width: 1px;
+            border-radius: 20px;
+            padding: 5px;
+            font-size: 14px;
+            color: #0F1111;
+            margin-bottom: 8px !important;
+            width: 100%;
+        }
+
+        #btn {
+            padding: 5%;
+            margin-top: 5%;
+            border: 1px #D5D9D9 solid;
+            border-radius: 8px;
+
+        }
+
+        .rating>img {
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .rating {
+            width: 15%;
+            margin: 0px;
+            padding-bottom: 5px;
+        }
+
+        ul:before {
+            content: attr(aria-label);
+            font-size: 16px !important;
+            font-weight: 700 !important;
+            padding-bottom: 4px;
+            color: #0F1111;
+            margin-left: -15px;
+        }
+
+        .about {
+            margin: 1%;
+        }
+
+        .about>li {
+            font-size: 14px;
+            color: #0F1111;
+        }
+
+        .sortBtn {
+            border-radius: 7px;
+            border-color: #dadada;
+            border-style: solid;
+            border-width: 1px;
+            font-size: 14px !important;
+            font-weight: 400 !important;
+            font-style: normal !important;
+            padding: 0;
+            padding-left: 5px;
+            padding-right: 5px;
+            box-shadow: 0 2px 5px rgb(15 17 17 / 15%);
+            background: #efeeee;
+            margin-bottom: 6%;
+        }
+    </style>
+
+    <link rel="stylesheet" href="./footer.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./productPage.js"></script>
+</head>
+
+<body>
+
+
+    <div class="header">
+        <div style="min-width: 100px; width: 6%; margin-right: 2%;">
+            <a href="./category.html"> <img src="img/amazon_icon.png" alt="amazon_icon" style="width: 100%;"> </a>
+        </div>
+        <div class="container">
+            <div class="input-group mb-3 col-6">
+                <div class="dropdown ">
+                    <button class="btn btn-secondary dropdown-toggle" style="height: 40px; z-index: 0;" type="button"
+                        id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        All
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li class="dropdown-item" onclick="changePage(this)">All Products</li>
+                        <li class="dropdown-item" onclick="changePage(this)">Books</li>
+                        <li class="dropdown-item" onclick="changePage(this)">Electronics</li>
+                        <li class="dropdown-item" onclick="changePage(this)">Clothing</li>
+                        <li class="dropdown-item" onclick="changePage(this)">Home Decor</li>
+                    </ul>
+                </div>
+                <input type="text" class="form-control" aria-label="search">
+                <span class="btn btn-warning "><img src="img/magnifier.png" style="width: 24px;"></span>
+            </div>
+
+        </div>
+        <div class="shoppingCart">
+
+            <img src="img/cart.png" alt="shopping_cart"
+                style="width: 50px;text-align: left; height: 40px;margin-right: 25px;z-index:0;"
+                onclick="window.location.href='cart.html';">
+            <p id="cartQty" class="text-over-img"
+                style=" margin-left: -45px;color:orange;font-size:20px; font-weight:600;">0</p>
+            <p style="color: aliceblue; align-self: end;margin-left: 40%;">Cart</p>
+        </div>
+    </div>
+
+    <div class="outer">
+
+        <div style="text-align: center;margin:0%">
+            <img src="./photos/kindle.jpeg" style="max-width:20px">
+            <b>International kindle paper white:Buy now</b>
+        </div>
+
+
+        <div class="item">
+            <div class="pImage"></div>
+            <!--the second item -->
+
+            <div>
+                <div style="border-bottom: 1px #D5D9D9 solid;">
+                    <div class="pDescription">
+                    </div>
+                    <label style="color: rgb(57, 161, 119);">In stock</label>
+                    <div>
+                        <label class="rating"></label>
+                        <label
+                            style="font-size:14px;color:#007185;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">5
+                            Custormer Reviews</label>
+                    </div>
+                </div>
+
+                <div>
+                    <p style="color:black; font-size:14px; margin-top: 4px;">
+                        <label style="color:grey; font-size:14px; font-weight:500;">Price:</label>
+                        <label class="price" style="color:red; font-size: 18px;">$36.99</label> & <label
+                            style="color:#007185;font-size:400p;">FREE
+                            Returns</label>
+                    </p>
+                    <ul class="about" aria-label="About this item">
+                        <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique reiciendis nobis
+                            doloremque. Cumque, error, </li>
+                        <li>id tempore iusto minima alias hic expedita suscipit quis dolorem saepe quibusdam culpa ab,
+                            nisi eligendi!
+                        </li>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod nulla alias quam voluptate
+                            earum ea recusandae quisquam </li>
+                        <li>iste vero inventore minus est modi tempora doloremque et, reprehenderit optio. Laborum,
+                            quia.</li>
+                        <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores atque libero nulla
+                            repellat natus eveniet aperiam quae nam aut, </li>
+                    </ul>
+                </div>
+                <div style="color:#007185;font-size:14px; margin: 3%;">Compare with similar items</div>
+            </div>
+
+            <div>
+                <div style="border: 1px #D5D9D9 solid;;border-radius: 8px; color: red;padding:5%">
+                    <label style="color:#0F1111"><b>Buy New: </b></label>
+                    <label class="pPrice">$129.99</label>
+                    <div style="color:#0F1111">
+                        &<label style="color:#007185">Free Returns</label>
+                        <p style="color:#007185;margin-top: 5px;">Free delivery: <label
+                                style="color:#0F1111;font-weight:bold;">Monday,April 25</label></p>
+                        <p>Or fastest delivery <b>Tomorrow, April 24.</b> Order within <label style="color:#007185">4
+                                hrs 8 mins</label></p>
+                        <p style="color:green;font-size:14px;font-weight:bold;">In Stock.</p>
+                    </div>
+                    <div class="sortItems">
+                        <div class="dropdown">
+                            <button class="btn btn-light dropdown-toggle sortBtn" type="button" id="dropdownMenu2"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Qty:
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                <li><button class="dropdown-item" type="button">1</button></li>
+                                <li><button class="dropdown-item" type="button">2</button></li>
+                                <li><button class="dropdown-item" type="button">3</button></li>
+                                <li><button class="dropdown-item" type="button">4</button></li>
+                                <li><button class="dropdown-item" type="button">5</button></li>
+                                <li><button class="dropdown-item" type="button">6</button></li>
+                                <li><button class="dropdown-item" type="button">7</button></li>
+                                <li><button class="dropdown-item" type="button">8</button></li>
+                                <li><button class="dropdown-item" type="button">9</button></li>
+                                <li><button class="dropdown-item" type="button">10</button></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button id="addCart" onclick="counter()">Add to Cart</button>
+                    <button id="shopNow">Buy Now</button>
+                    <div style="color:#007185;font-size:14px"><label
+                            style="color:black;font-size:14px;font-weight: 500;">Return
+                            policy:</label> Eligible for Return, Refund
+                        or Replacement within 30 days of
+                        receipt</div>
+
+                </div>
+
+                <div id="btn"> New(13) from <label style="color: red"> $29.58</label> <label style="text-align: end">
+                        ></label></div>
+
+                <div><img style="text-align: center;margin:4%; " src="./Category-images/pagef.png"></div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <div class="page">
+        <div class="container footerdiv">
+            <div class="body">
+                <div class="box sec1">
+                    <h3>About Us</h3>
+                    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                        incididunt ut
+                        labore
+                        et
+                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                        nisi ut
+                        aliquip
+                        ex
+                        ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                        cillum
+                        dolore
+                        eu
+                        fugiat
+                        nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                        officia
+                        deserunt
+                        mollit
+                        anim id est laborum.</div>
+
+                    <p class="phone"> <img src="./photos/phone-2-16.ico" /> +1 291 3912 329</p>
+                    <p class="envelope"> <img src="./photos/email-11-16.ico" /> info@amazon.com</p>
+
+                    <div class="search"><input type="text" placeholder="Enter your e-mail" /><input type="button"
+                            value="Send" /></div>
+                </div>
+                <div class="box sec2">
+                    <h3>Lastest Tweet</h3>
+                    <ul class="tweets">
+                        <li>Lorem ipsum dolor sit amet, consectetur
+                            adipiscing
+                            elit, sed do eiusmod tempor incididunt ut labore
+                            et dolore magna aliqua.</li>
+                        <li></i>Cursus eget nunc scelerisque viverra mauris in.
+                            Cursus
+                            euismod quis viverra nibh cras pulvinar
+                            mattis.</li>
+                        <li></i>Id faucibus nisl tincidunt eget nullam non
+                            nisi.
+                            Proin
+                            sagittis nisl rhoncus mattis rhoncus urna
+                            neque.</li>
+                    </ul>
+                </div>
+                <div class="box sec3">
+                    <h3>Instagram</h3>
+                    <div class="instagram">
+                        <div>
+                            <img src="./photos/footer1.jpeg" />
+                        </div>
+                        <div>
+                            <img src="./photos/footer2.jpeg" />
+                        </div>
+                        <div>
+                            <img src="./photos/footer3.jpeg" />
+                        </div>
+                        <div>
+                            <img src="./photos/footer4.webp" />
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="footer">
+                <ul class="footerContent">
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Our Works</li>
+                    <li>Services</li>
+                    <li>Blog</li>
+                    <li>Contacts</li>
+                </ul>
+                <div class="logo">
+                    Amazon
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function counter() {
+            let count = 1;
+            document.getElementById("cartQty").innerHTML = +document.getElementById("cartQty").innerHTML + count;
+            count++;
+            return count;
+        }
+    </script>
+</body>
+
+</html>

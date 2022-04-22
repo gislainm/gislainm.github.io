@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+    <title>Amazon</title>
+    <style>
+        body {
+            background-color: whitesmoke;
+        }
+
+        .header {
+            padding-top: 15px;
+            padding-left: 15px;
+            padding-right: 25px;
+            display: flex;
+            background-color: rgb(20, 0, 23);
+        }
+
+        .shoppingCart {
+            display: flex;
+            margin-left: 10%;
+            margin-right: 20px;
+
+        }
+
+        .gap1 {
+            width: 100%;
+            height: 35px;
+            background-color: rgb(44, 59, 77);
+        }
+
+        .carouselDiv {
+            max-height: max-content;
+        }
+
+
+
+        .carouselImg {
+            background: linear-gradient(bottom, white, transparent);
+        }
+
+        .helpUk {
+            background-color: rgb(73, 85, 99);
+            text-align: center;
+            color: aliceblue;
+        }
+
+        #myCarousel {
+            z-index: -1;
+            width: 100%;
+            min-width: 102%;
+            margin-left: -10px;
+            height: auto;
+        }
+
+        .img-fluid {
+            max-width: 100%;
+        }
+
+        .myflex {
+            background-color: white;
+            z-index: 1;
+            display: flex;
+            flex-wrap: wrap;
+            row-gap: 20px;
+            justify-content: space-between;
+        }
+
+        .deal {
+            background-color: white;
+            width: auto;
+            border: 2px solid rgb(172, 172, 172);
+            border-style: double;
+            border-radius: 10px;
+        }
+
+
+        .bottom {
+            position: absolute;
+            z-index: 10;
+            top: 80%;
+        }
+
+        .promo {
+            padding-left: 3%;
+            padding-right: 3%;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            /* flex-wrap: wrap; */
+            gap: 2%;
+            margin-bottom: 15px;
+
+        }
+
+        .promo1 {
+
+            padding-left: 3%;
+            padding-right: 3%;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            /* flex-wrap: wrap; */
+            gap: 2%;
+            margin-bottom: 15px;
+
+        }
+
+        .signin {
+            background-color: rgb(255, 255, 255);
+            justify-self: flex-end;
+            width: auto;
+            border: 2px solid rgb(172, 172, 172);
+            border-style: double;
+            border-radius: 10px;
+            padding-top: 20%;
+
+        }
+
+        .categoryPics {
+
+            padding: 5%;
+            display: inline-grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+
+        }
+
+        .pic {
+            grid-area: pic;
+        }
+
+        .categoryDiv {
+            background-color: white;
+        }
+
+        /*   ******      OVERLAY    ******    */
+        .overlay {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 10;
+            top: 0;
+            left: 0;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.9);
+            overflow-x: hidden;
+            transition: 0.5s;
+        }
+
+        .overlay-content {
+            position: relative;
+            top: 15%;
+            width: 100%;
+            /* margin-top: 30px; */
+            padding: 10px;
+        }
+
+        .overlay a {
+            padding: 8px;
+            text-decoration: none;
+            font-size: 36px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .overlay a:hover,
+        .overlay a:focus {
+            color: #f1f1f1;
+        }
+
+        .overlay .closebtn {
+            position: absolute;
+            top: 20px;
+            right: 45px;
+            font-size: 40px;
+        }
+
+        .donate:link {
+            text-decoration: none;
+        }
+
+        .donate:hover {
+            text-decoration: underline;
+            color: chartreuse;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+    </style>
+    <link rel="stylesheet" href="./footer.css">
+
+    <script>
+        function searchCat(obj) {
+            let btn = document.getElementById("categoryBtn");
+            btn.innerHTML = obj.innerHTML;
+        }
+
+        function searchItem() {
+            let textBox = document.getElementById("searchTextBox").value;
+            let cat = document.getElementById("categoryBtn").innerHTML;
+            // console.log(cat == "Home Decor")
+            if (cat === "Books" || cat === "Electronics" || cat === "Clothing" || cat === "Home Decor") {
+                let catFound = productsArr.filter(function (item) {
+                    if (item.category === cat)
+                        return item;
+                });
+                newPage(catFound);
+                //console.log("I got ", catFound);
+            }
+            else if (cat == "All products") {
+                newPage(productsArr);
+            }
+        }
+
+
+        function newPage(arr) {
+            console.log("Arr is", arr);
+        }
+    </script>
+    <script src="./main.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <div style="min-width: 100px; width: 6%; margin-right: 2%;">
+            <a href="./category.html"> <img src="img/amazon_icon.png" alt="amazon_icon" style="width: 100%;"></a>
+        </div>
+        <div class="container">
+            <div class="input-group mb-3 col-6">
+                <div class="dropdown ">
+                    <button id="categoryBtn" class="btn btn-secondary dropdown-toggle" style="height: 40px; z-index: 0;"
+                        type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        All Products
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li class="dropdown-item" onclick="searchCat(this)">All products</li>
+                        <li class="dropdown-item" onclick="searchCat(this)">Books</li>
+                        <li class="dropdown-item" onclick="searchCat(this)">Electronics</li>
+                        <li class="dropdown-item" onclick="searchCat(this)">Clothing</li>
+                        <li class="dropdown-item" onclick="searchCat(this)">Home Decor</li>
+                    </ul>
+                </div>
+                <input id="searchTextBox" type="text" class="form-control" aria-label="search">
+                <span class="btn btn-warning " onclick="searchItem()"><img src="img/magnifier.png"
+                        style="width: 24px;"></span>
+            </div>
+
+        </div>
+        <div class="shoppingCart">
+            <img src="img/cart.png" alt="shopping_cart" style="width: 50px;text-align: left; height: 40px;margin-right: 25px;z-index:0; ">
+            <p  id="cartQty" class="text-over-img" style=" margin-left: -45px;color:red;">0</p> 
+            <p style="color: aliceblue; align-self: end;margin-left: 40%;">Cart</p>
+        </div>
+    </div>
+
+
+    <!-- *******     LEFT  MENU    ********* -->
+    <div class="gap1">
+
+        <div id="myNav" class="overlay">
+            <button class="closebtn" onclick="closeNav()"
+                style="color: aqua;background: none; border: none;">&times;</button>
+            <div class="overlay-content">
+                <a href="#">Books</a>
+                <a href="#">Electronics</a>
+                <a href="#">Clothing</a>
+                <a href="#">Home decor</a>
+            </div>
+        </div>
+
+
+
+        <button class="btn btn-warning" style="font-weight: bolder;cursor:pointer; height: 35px; text-align: center;"
+            onclick="openNav()">&#9776; All Categories</button>
+
+        <script>
+            function openNav() {
+                document.getElementById("myNav").style.width = "300px";
+            }
+
+            function closeNav() {
+                document.getElementById("myNav").style.width = "0%";
+            }
+        </script>
+
+    </div>
+    <div class="helpUk">
+        <img src="./photos/ukraine.png" alt="" style="width: 25px;">
+        Help the people of Ukraine.<a
+            href="https://www.amazon.com/b/?_encoding=UTF8&ie=UTF8&node=17285237011&pf_rd_p=6d1cb865-786e-47bc-aa97-bd988a07d04e&pd_rd_wg=tUPWy&pf_rd_r=D4SBCG1DKFEXNCQ7R7YR&pd_rd_w=qhmZv&pd_rd_r=b3f939f3-e9e9-49fe-babf-7728bdebaf2f&ref_=pd_gw_unk"
+            style="color: aliceblue;"> <b class="donate">Donate now.</b></a>
+    </div>
+
+    <div class="container" id="myCarousel">
+        <div>
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner" style="max-height: 600px;">
+                    <div class="carousel-item active">
+                        <img src="./photos/carousel1.png" class="d-block w-100" alt="..."
+                            style="height: auto; max-width: 100%;">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./photos/carousel2.png" class="d-block w-100" alt="..."
+                            style="height:auto; max-width: 100%;">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./photos/carousel3.png" class="d-block w-100" alt="..."
+                            style="height: auto; max-width: 100%;">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="bottom">
+        <div class="promo">
+            <div class="deal">
+                <h4 style="text-align: center;">Books</h4>
+                <div style="display: flex; flex-wrap: wrap; justify-content: space-evenly;">
+                    <div>
+                        <img src="./photos/aBriefHistory.jpg" style="width:150px;">
+                        <p>History</p>
+                    </div>
+                    <div>
+                        <img src="./photos/sapiens.jpeg" style="width:150px;">
+                        <p>Science</p>
+                    </div>
+                    <div>
+                        <img src="./photos/storyGenius.jpg" style="width:150px;">
+                        <p>Psychology</p>
+                    </div>
+                    <div>
+                        <img src="./photos/dube.jpg" style="width:150px;">
+                        <p>Sci-Fi</p>
+                    </div>
+                </div>
+                <p style="text-align: center;"><a href=".......">Get the deal</a></p>
+            </div>
+            <div class="deal">
+                <h4 style="text-align: center;">Electronics</h4>
+                <div style="display: flex; flex-wrap: wrap; justify-content: space-evenly;">
+                    <div>
+                        <img src="./photos/airpods.jpg" style="width:150px;">
+                        <p>Apple earphones</p>
+                    </div>
+                    <div>
+                        <img src="./photos/beats.jpg" style="width:150px;">
+                        <p>Beats headphones</p>
+                    </div>
+                    <div>
+                        <img src="./photos/soundCore.jpg" style="width:150px;">
+                        <p>Soundcore headphones</p>
+                    </div>
+                    <div>
+                        <img src="./photos/iphone.jpg" style="width:150px;">
+                        <p>Apple phone</p>
+                    </div>
+                </div>
+                <p style="text-align: center;"><a href=".......">Get the deal</a></p>
+            </div>
+
+            <div class="signin">
+                <img src="./photos/signin.png" style="max-width: 90%; object-fit: contain; margin-left: 5%;">
+                <br><br>
+                <h4 style="text-align: center;">Sign in for the best experience</h4>
+                <br>
+                <p style="text-align: center;"><button class="btn btn-warning signinSecure" style="width: 50%;">Sign
+                        in
+                        securely</button></p>
+            </div>
+        </div>
+        <div class="promo1">
+            <div class="deal">
+                <h4 style="text-align: center;">Clothing</h4>
+                <div style="display: flex; flex-wrap: wrap; justify-content: space-evenly;">
+                    <div>
+                        <img src="./photos/clothes1.jpg" style="width:150px;">
+                        <p>Joggers for men</p>
+                    </div>
+                    <div>
+                        <img src="./photos/clothes2.jpg" style="width:150px;">
+                        <p>Sports Bras</p>
+                    </div>
+                    <div>
+                        <img src="./photos/clothes3.jpg" style="width:150px;">
+                        <p>Baby clothes</p>
+                    </div>
+                    <div>
+                        <img src="./photos/clothes4.jpg" style="width:150px;">
+                        <p>Leggings</p>
+                    </div>
+                </div>
+                <p style="text-align: center;"><a href=".......">Get the deal</a></p>
+            </div>
+            <div class="deal">
+                <h4 style="text-align: center;">Home Decor</h4>
+                <div style="display: flex; flex-wrap: wrap; justify-content: space-evenly;">
+                    <div>
+                        <img src="./photos/home1.jpg" style="width:150px;">
+                        <p>Furniture</p>
+                    </div>
+                    <div>
+                        <img src="./photos/home2.jpg" style="width:150px;">
+                        <p>Flower Vase</p>
+                    </div>
+                    <div>
+                        <img src="./photos/home3.jpg" style="width:150px;">
+                        <p>Curtains</p>
+                    </div>
+                    <div>
+                        <img src="./photos/home5.jpg" style="width:150px;">
+                        <p>Candle Decoration</p>
+                    </div>
+                </div>
+                <p style="text-align: center;"><a href=".......">Get the deal</a></p>
+            </div>
+            <div class="signin" style="padding: 2%;">
+                <h5>The more you learn... </h5>
+                <img src="./photos/theMore.png" style="max-width: 90%; object-fit: contain; margin-left: 5%;">
+                <br>
+                <h5 style="text-align: end;"> ...the more you'll earn</h5>
+                <br>
+                <p style="text-align: center;"><a href=""> Learn about Amazon Web Services</a> </p>
+            </div>
+        </div>
+    </div>
+    <div class="page" style="position:absolute; top:1750px; width:100%">
+        <div class="container footerdiv">
+            <div class="body">
+                <div class="box sec1">
+                    <h3>About Us</h3>
+                    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                        incididunt ut
+                        labore
+                        et
+                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                        nisi ut
+                        aliquip
+                        ex
+                        ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                        cillum
+                        dolore
+                        eu
+                        fugiat
+                        nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                        officia
+                        deserunt
+                        mollit
+                        anim id est laborum.</div>
+
+                    <p class="phone"> <img src="../photos/phone-2-16.ico" /> +1 291 3912 329</p>
+                    <p class="envelope"> <img src="../photos/email-11-16.ico" /> info@amazon.com</p>
+
+                    <div class="search"><input type="text" placeholder="Enter your e-mail" /><input type="button"
+                            value="Send" /></div>
+                </div>
+                <div class="box sec2">
+                    <h3>Lastest Tweet</h3>
+                    <ul class="tweets">
+                        <li>Lorem ipsum dolor sit amet, consectetur
+                            adipiscing
+                            elit, sed do eiusmod tempor incididunt ut labore
+                            et dolore magna aliqua.</li>
+                        <li></i>Cursus eget nunc scelerisque viverra mauris in.
+                            Cursus
+                            euismod quis viverra nibh cras pulvinar
+                            mattis.</li>
+                        <li></i>Id faucibus nisl tincidunt eget nullam non
+                            nisi.
+                            Proin
+                            sagittis nisl rhoncus mattis rhoncus urna
+                            neque.</li>
+                    </ul>
+                </div>
+                <div class="box sec3">
+                    <h3>Instagram</h3>
+                    <div class="instagram">
+                        <div>
+                            <img src="photos/footer1.jpeg" />
+                        </div>
+                        <div>
+                            <img src="photos/footer2.jpeg" />
+                        </div>
+                        <div>
+                            <img src="photos/footer3.jpeg" />
+                        </div>
+                        <div>
+                            <img src="photos/footer4.webp" />
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="footer">
+                <ul class="footerContent">
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Our Works</li>
+                    <li>Services</li>
+                    <li>Blog</li>
+                    <li>Contacts</li>
+                </ul>
+                <div class="logo">
+                    Amazon
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

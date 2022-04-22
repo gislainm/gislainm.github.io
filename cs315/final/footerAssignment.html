@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer</title>
+    <script src="https://use.fontawesome.com/52557afaa0.js"></script>
+    <style>
+        .page {
+            background-color: grey;
+            padding: 1%;
+        }
+
+        .container {
+            padding: 6%;
+            display: grid;
+            grid-template-rows: 1fr 0fr 0fr;
+            grid-gap: 1%;
+            background-color: #202126;
+            ;
+
+        }
+
+        .body {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            background-color: #202126;
+            padding: 5%;
+            justify-content: space-between;
+            font-family: "Source Serif Pro", serif;
+        }
+
+        .divider {
+            border: solid #888 1px;
+        }
+
+        .box {
+            color: #888;
+            padding: 3%;
+        }
+
+        .instagram {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            row-gap: 2%;
+            column-gap: 2%;
+        }
+
+        img {
+            width: 200px;
+            height: 100px;
+        }
+
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            padding: 1% 5% 1%;
+            color: white;
+        }
+
+        .footerContent {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1.5fr 1.4fr 1fr 1fr;
+            gap: 1%;
+            list-style-type: none;
+            color: #fff;
+            font-family: "Poppins", sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        .tweets>li {
+            list-style-image: url("../../webDocs/assets/images/twitter-16.ico");
+            padding-left: 0px;
+            margin-left: 0px;
+            padding-bottom: 6%;
+        }
+
+        .tweets {
+            padding-left: 7%;
+        }
+
+        .logo {
+            margin: 1%;
+            color: #fff;
+            font-size: 20px;
+            font-family: "Poppins", sans-serif;
+        }
+
+        .sec1 {
+            font-size: 16px;
+        }
+
+        .sec2 {
+            font-family: "Source Serif Pro", serif;
+            font-style: italic;
+            font-size: 15px;
+        }
+
+        p>img {
+            width: 12px;
+            height: 12px;
+        }
+
+        .phone,
+        .envelope {
+            font-size: 16px;
+            color: #fff;
+        }
+
+        .search {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            border-radius: 20px
+        }
+
+        input[type="text"] {
+            padding: 3%;
+            grid-column: 1/3;
+            grid-row: 1/2;
+            border-radius: 30px;
+            background-color: #292b31;
+            color: #fff;
+            border: none;
+        }
+
+        input[type="button"] {
+            border-radius: 30px;
+            grid-column: 2/3;
+            grid-row: 1/2;
+            background-color: #f88020;
+            font-weight: bold;
+            border: 1px solid transparent;
+            color: #fff;
+
+        }
+
+        h3 {
+            font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            font-size: 20px;
+            color: #fff;
+            font-weight: 500;
+            font-style: normal;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        <div class="container">
+            <div class="body">
+                <div class="box sec1">
+                    <h3>About Us</h3>
+                    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore
+                        et
+                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                        aliquip
+                        ex
+                        ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                        dolore
+                        eu
+                        fugiat
+                        nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                        deserunt
+                        mollit
+                        anim id est laborum.</div>
+
+                    <p class="phone"> <img src="../../webDocs/assets/images/phone-2-16.ico" /> +1 291 3912 329</p>
+                    <p class="envelope"> <img src="../../webDocs/assets/images/email-11-16.ico" /> info@gmail.com</p>
+
+                    <div class="search"><input type="text" placeholder="Enter your e-mail" /><input type="button"
+                            value="Send" /></div>
+                </div>
+                <div class="box sec2">
+                    <h3>Lastest Tweet</h3>
+                    <ul class="tweets">
+                        <li>Lorem ipsum dolor sit amet, consectetur
+                            adipiscing
+                            elit, sed do eiusmod tempor incididunt ut labore
+                            et dolore magna aliqua.</li>
+                        <li></i>Cursus eget nunc scelerisque viverra mauris in.
+                            Cursus
+                            euismod quis viverra nibh cras pulvinar
+                            mattis.</li>
+                        <li></i>Id faucibus nisl tincidunt eget nullam non
+                            nisi.
+                            Proin
+                            sagittis nisl rhoncus mattis rhoncus urna
+                            neque.</li>
+                    </ul>
+                </div>
+                <div class="box sec3">
+                    <h3>Instagram</h3>
+                    <div class="instagram">
+                        <div>
+                            <img src="../../webDocs/assets/images/footer1.jpeg" />
+                        </div>
+                        <div>
+                            <img src="../../webDocs/assets/images/footer2.jpeg" />
+                        </div>
+                        <div>
+                            <img src="../../webDocs/assets/images/footer3.jpeg" />
+                        </div>
+                        <div>
+                            <img src="../../webDocs/assets/images/footer4.webp" />
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="footer">
+                <ul class="footerContent">
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Our Works</li>
+                    <li>Services</li>
+                    <li>Blog</li>
+                    <li>Contacts</li>
+                </ul>
+                <div class="logo">
+                    Colorlib
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

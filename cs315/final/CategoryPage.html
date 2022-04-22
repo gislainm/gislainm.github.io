@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <style>
+
+.header {
+            /* padding-top: 15px;
+            padding-left: 15px;
+            padding-right: 25px; */
+            display: flex;
+            background-color: rgb(20, 0, 23);
+        }
+
+        .shoppingCart {
+            display: flex;
+            margin-left: 10%;
+            margin-right: 20px;
+            
+        }
+        body{
+            font-size: large;
+            padding: 5%;
+            padding-bottom:0%;
+            padding-top: 0%;
+        
+        }
+       
+        .wrapper .wrapper2{
+           padding:5%;
+           
+        }
+       
+         p{
+       margin-left:15%;
+        }
+
+        img{
+            max-width: 100%;
+            padding:5%;
+        }
+
+        .prdtList{
+            display:flex;
+             flex-flow:row wrap;
+             gap:5%;
+             margin-left:2%;
+        }
+        
+    </style>
+
+    <link rel="stylesheet" href="./footer.css">
+</head>
+<body>
+    
+    <div class="header">
+        <div style="min-width: 100px; width: 6%; margin-right: 2%;" >
+            <a href="main.html"><img src="img/amazon_icon.png" alt="amazon_icon" style="width: 100%;"></a>
+        </div>
+        <div class="container">
+            <div class="input-group mb-3 col-6">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" style="height: 40px; z-index: 0;" type="button"
+                        id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        All
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li class="dropdown-item">Category1</li>
+                        <li class="dropdown-item">Category2</li>
+                        <li class="dropdown-item">Category3</li>
+                    </ul>
+                </div>
+                <input type="text" class="form-control" aria-label="search">
+                <span class="btn btn-warning "><img src="img/magnifier.png" style="width: 24px;"></span>
+            </div>
+
+        </div>
+        <div class="shoppingCart">
+            <img src="img/cart.png" alt="shopping_cart" style="width: 50px;text-align: left; height: 40px;margin-right: 25px;z-index:0; ">
+            <p  id="cartQty" class="text-over-img" style=" margin-left: -45px;color:red;">0</p> 
+            <p style="color: aliceblue; align-self: end;margin-left: 40%;">Cart</p>
+        </div>
+    </div>
+
+    <div  class="wrapper" style="border-bottom:solid darkgrey;display: grid; border-radius:8px;padding: 1%;grid-template-columns: auto auto; ">
+     <div>1-21 of over 60,000 results</div> 
+    <div style="text-align: right"> 
+        <select style="background-color:whitesmoke;" >
+            <option>Sort by:Featured</option>
+         <option>Price High to Low</option>
+         <option>Price Low to High </option>
+         <option>Highest Ratings </option>
+     </select>
+     </div>
+
+     </div>
+
+
+     <div class="wrapper2" style="display: grid;grid-template-columns:15% auto auto auto auto;margin: 1%;"> <!--  the inner -->
+        <div style="border-right: solid 4px whitesmoke ">
+            <h2>Department</h2>
+           <div style="margin-left: 5%;"><a href="###">Electronics</a></div> 
+           <div style="margin-left: 5%;"><a href="###">Clothings</a></div> 
+           <div style="margin-left: 5%;"> <a href="###">Home Deco</a></div> 
+           <div style="margin-left: 5%;"> <a href="###">Books</a></div> 
+           
+        </div>
+        
+        
+      
+
+        <div class="prdtList" >  <!-- append the products here-->
+
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="./Category-images/img2.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Pumpers</h5>
+                  <p class="card-text">So tight and smooth on body.Parental && always Dry.Best Prices in town</p>
+                  <img src="./Category-images/rating.png">
+                  <p>$<b >35.</b>99</p> 
+                </div>
+            </div>
+    
+            
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="./Category-images/img4.jpg" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">So tight and smooth on body.Pulls out those muscle.Cool in winter</p>
+                      <img src="./Category-images/rating.png">
+                      <p>$<b >35</b>99</p>  
+                    </div>
+                </div>
+    
+    
+    
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="./Category-images/img6.jpg" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title">Pens</h5>
+                          <p class="card-text">Amust pass if u use it.Writes only right answers.In All colors</p>
+                          <img src="./Category-images/rating.png">
+                          <p>$<b >35</b>99</p>  
+                        </div>
+                    </div>
+
+            
+        </div>
+
+            
+    </div>
+    
+    <div class="page">
+        <div class="container footerdiv">
+            <div class="body">
+                <div class="box sec1">
+                    <h3>About Us</h3>
+                    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore
+                        et
+                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                        aliquip
+                        ex
+                        ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                        dolore
+                        eu
+                        fugiat
+                        nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                        deserunt
+                        mollit
+                        anim id est laborum.</div>
+
+                    <p class="phone"> <img src="./photos/phone-2-16.ico" /> +1 291 3912 329</p>
+                    <p class="envelope"> <img src="../photos/email-11-16.ico" /> info@amazon.com</p>
+
+                    <div class="search"><input type="text" placeholder="Enter your e-mail" /><input type="button"
+                            value="Send" /></div>
+                </div>
+                <div class="box sec2">
+                    <h3>Lastest Tweet</h3>
+                    <ul class="tweets">
+                        <li>Lorem ipsum dolor sit amet, consectetur
+                            adipiscing
+                            elit, sed do eiusmod tempor incididunt ut labore
+                            et dolore magna aliqua.</li>
+                        <li></i>Cursus eget nunc scelerisque viverra mauris in.
+                            Cursus
+                            euismod quis viverra nibh cras pulvinar
+                            mattis.</li>
+                        <li></i>Id faucibus nisl tincidunt eget nullam non
+                            nisi.
+                            Proin
+                            sagittis nisl rhoncus mattis rhoncus urna
+                            neque.</li>
+                    </ul>
+                </div>
+                <div class="box sec3">
+                    <h3>Instagram</h3>
+                    <div class="instagram">
+                        <div>
+                            <img src="./photos/footer1.jpeg" />
+                        </div>
+                        <div>
+                            <img src="./photos/footer2.jpeg" />
+                        </div>
+                        <div>
+                            <img src="./photos/footer3.jpeg" />
+                        </div>
+                        <div>
+                            <img src="./photos/footer4.webp" />
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="footer">
+                <ul class="footerContent">
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Our Works</li>
+                    <li>Services</li>
+                    <li>Blog</li>
+                    <li>Contacts</li>
+                </ul>
+                <div class="logo">
+                    Amazon
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

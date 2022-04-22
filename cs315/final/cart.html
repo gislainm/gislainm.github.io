@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+    <style>
+        .container {
+            width: 100%;
+            width: 90%;
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 10px;
+        }
+
+        .leftPart {
+            height: 85%;
+            height: 79%;
+            display: grid;
+            grid-template-rows: 1fr 3fr 1fr;
+            gap: 10px;
+            background-color: white;
+            padding-left: 10px;
+        }
+
+        .leftPart1 {
+            width: fit-content;
+        }
+
+        .leftPart2 {
+            /* margin-top: -10px; */
+            display: grid;
+            grid-template-columns: 1fr 4fr 1fr;
+            gap: 10px;
+            margin-bottom: 60px;
+        }
+
+        .leftPart23 {
+            margin-left: 60px;
+            /* margin-top: -20px; */
+        }
+
+        .HorSpacing {
+            display: flex;
+            gap: 20px;
+        }
+
+        .leftPart3 {
+            margin-top: -80px;
+            display: grid;
+            grid-template-rows: 1fr 4fr;
+        }
+
+        .leftPart31 {
+            display: grid;
+            grid-template-columns: 1fr 4fr 1fr;
+            gap: 10px;
+        }
+
+        .image1 {
+            width: 100px;
+        }
+
+        .rightPart {
+            display: grid;
+            grid-template-rows: 1fr 2fr;
+            height: 79%;
+            background-color: white;
+            padding-left: 10px;
+            padding-top: 30px;
+        }
+
+        .rightPart1 {
+            display: grid;
+            grid-template-rows: 1fr 1fr 1fr;
+            gap: 20px;
+        }
+
+        .header {
+            padding-top: 15px;
+            padding-left: 15px;
+            padding-right: 25px;
+            display: flex;
+            background-color: rgb(20, 0, 23);
+            margin-left: 91px;
+            margin-right: 91px;
+        }
+
+        .shoppingCart {
+            display: flex;
+            margin-left: 10%;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div style="min-width: 100px; width: 6%; margin-right: 2%">
+            <img src="/img/amazon_icon.png" alt="amazon_icon" style="width: 100%" />
+        </div>
+        <div class="container">
+            <div class="input-group mb-3 col-6">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" style="height: 40px; z-index: 0" type="button"
+                        id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        All
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li class="dropdown-item">Category1</li>
+                        <li class="dropdown-item">Category2</li>
+                        <li class="dropdown-item">Category3</li>
+                    </ul>
+                </div>
+                <input type="text" class="form-control" aria-label="search" />
+                <span class="btn btn-warning"><img src="/img/magnifier.png" style="width: 24px" /></span>
+            </div>
+        </div>
+        <div class="shoppingCart">
+            <img src="/img/cart.png" alt="shopping_cart" style="width: 50px; height: 40px" />
+            <label style="color: aliceblue; align-self: center">Cart</label>
+        </div>
+    </div>
+    </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="leftPart">
+                <div class="leftPart1">
+                    <p style="font-size: 250%">Shopping Cart</p>
+                    <p style="margin-left: 900px; margin-bottom: -10px">Price</p>
+                    <div>
+                        <hr />
+                    </div>
+                </div>
+                <div class="leftPart2">
+                    <div class="leftPart21">
+                        <img src="./photos/earbuds.png" alt="blutooth" class="image1" />
+                    </div>
+                    <div class="leftPart22">
+                        <p>
+                            TOZO T10 Bluetooth 5.0 Wireless Earbuds with Wireless Charging
+                            Case IPX8 WaterProof Stereo Headphones in Ear built in Mic Headset
+                            Premium
+                        </p>
+                        <p>
+                            <a href="default" style="color: rgb(111, 136, 111)">In Stock</a>
+                        </p>
+                        <p>
+                            Eligible for Free Shipping &
+                            <a href="default" style="color: rgb(15, 146, 146)">FREE Returns</a>
+                        </p>
+                        <p>
+                            <input type="checkbox" />This is a gift
+                            <a href="default" style="color: rgb(15, 146, 146)">Learn more</a>
+                        </p>
+                        <p><b>Color</b>:Black</p>
+                        <p><b>Size:1</b></p>
+                        <div class="HorSpacing">
+                            <!-- <button>Qty:1</button> -->
+                            <select name="quantity" id="Qty" style="border: 3px solid #ccc; border-radius: 5px">
+                                <option value="" selected="selected">Qty:1</option>
+                            </select>
+                            <label><a href="default" style="
+color: rgb(15, 146, 146);
+border-left: 2px solid #ccc;
+padding-left: 5px;
+">Delet</a></label>
+                            <label><a href="default" style="
+color: rgb(15, 146, 146);
+border-left: 2px solid #ccc;
+padding-left: 5px;
+">Save for later</a></label>
+                            <label>
+                                <a href="default" style="
+color: rgb(15, 146, 146);
+border-left: 1px solid #ccc;
+padding-left: 5px;
+">Compare with similar items</a></label>
+                        </div>
+                    </div>
+                    <div class="leftPart23">
+                        <p style="font-size: 150%"><b>$29.99</b></p>
+                        <button style="margin-right: 10px">
+                            Save 20% <br /><a href="default" style="color: rgb(15, 146, 146)">Clip Coupon</a>
+                        </button>
+                    </div>
+                </div>
+                <div class="leftPart3">
+                    <div>
+                        <hr />
+                    </div>
+                    <div class="leftPart31">
+                        <div>
+                            <img src="./photos/pressureCooker.png" alt="Electronic cooker" style="width: 50px" />
+                        </div>
+                        <p style="margin-top: -5px">
+                            Instant Poto Duo 7-in-1 Electronic Pressure Cooker, Slow Cooker,
+                            Rice Cooker, Steamer,Saut, Yogurt Maker, Warmer & Sterilizer, 6
+                            Quart, Stainless Steel...
+                        </p>
+                        <div style="font-size: 150%; padding-left: 10px; margin-left: 40px">
+                            <b>$89.00</b>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="rightPart">
+                <div class="rightPart1">
+                    <p>
+                        <label style="color: rgb(15, 146, 146)">Your Order Qualifies for free.</label>Choose This option
+                        at the Checkout.
+                        <a href="default" style="color: rgb(15, 146, 146)">See Details</a>
+                    </p>
+                    <div>
+                        <div><b>Subtotal(2-items):$118.99</b></div>
+                        <div><input type="checkbox" />The order contains gift</div>
+                    </div>
+                    <div>
+                        <button style="
+background-color: orange;
+border: 2px solid white;
+border-radius: 5px;
+font-size: 150%;
+">
+                            proceed to checkout
+                        </button>
+                    </div>
+                </div>
+                <div style="background-color: #ccb; margin-left: -10px"></div>
+            </div>
+        </div>
+    </body>
+
+</html>
