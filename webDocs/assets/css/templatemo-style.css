@@ -635,6 +635,14 @@ button:hover {
     background-image: url(../images/forms.png);
 }
 
+.service-item .twentysixth-service-icon {
+    background-image: url(../images/final2.png);
+}
+
+.service-item:hover .twentysixth-service-icon {
+    background-image: url(../images/final2.png);
+}
+
 /* My Work */
 
 section.my-work .section-heading {

@@ -19,7 +19,7 @@ function printName(node) {
         console.log(node.name);
     }
 }
-//printName(Abe);
+printName(Abe);
 
 //Question 2
 function contains(tree, target) {
@@ -88,6 +88,7 @@ function generateList(root) {
     return linkedList;
 }
 
+
 //Question 5
 function findListNode(list, target) {
     let containingList = null;
@@ -155,7 +156,7 @@ function treeCollector(tree) {
     }
     return valuesArr;
 }
-//console.log(treeCollector(Abe));
+console.log(treeCollector(Abe));
 
 
 

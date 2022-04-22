@@ -25,20 +25,30 @@ let json = {
 };
 
 //Question 1
+// function countKeys(obj) {
+//     let count = 1;
+//     for (let key in obj) {
+//         if ((typeof (obj[key]) == 'object') && (!Array.isArray(obj[key]))) {
+//             let newCount = count + countKeys(obj[key]);
+//             count = newCount + count;
+//         } else {
+//             count = count + 1;
+//         }
+//     }
+//     return count;
+// }
+
 function countKeys(obj) {
-    let count = 0;
+    let count = Object.keys(obj).length;
     for (let key in obj) {
-        if ((typeof (obj[key]) == 'object') && (!Array.isArray(obj[key]))) {
-            let newCount = count + countKeys(obj[key]);
-            count = newCount + count;
-        } else {
-            count = count + 1;
+        if (typeof (obj[key]) == "object" && !Array.isArray(obj[key])) {
+            let newCount = countKeys(obj[key]);
+            count = count + newCount;
         }
     }
     return count;
 }
-console.log(countKeys(simpleObject));
-
+console.log(countKeys(json));
 
 //Question 2
 function listLeaves(obj) {
@@ -100,6 +110,6 @@ function findValuesOfGivenKey(obj, value) {
     }
     return values;
 }
-console.log(findValuesOfGivenKey(json, 'GlossSeeAlso'))
+//console.log(findValuesOfGivenKey(simpleObject, 'a'))
 
 //console.log(JSON.stringify(json));

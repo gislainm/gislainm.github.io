@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrapper {
+            display: grid;
+            grid-template-rows: auto auto auto;
+
+        }
+
+        .title {
+            background-color: pink;
+            text-align: center;
+
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            column-gap: 10px;
+        }
+
+        .box {
+            background-color: greenyellow;
+            padding: 10px;
+            display: flow-root;
+        }
+
+        .footer {
+            background-color: green;
+            color: white;
+            display: flex;
+            flex-flow: row wrap;
+            gap: 10px;
+            justify-content: center;
+            padding: 20px;
+            font-size: 20px;
+        }
+
+        img {
+            width: 150px;
+            height: auto;
+        }
+
+        @media only screen and (max-width:550px) {
+            .content {
+                display: flex;
+                flex-flow: row wrap;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="title">
+            <h1>Header</h1>
+        </div>
+        <div class="content">
+            <div class="box 1">
+                <div style="float:left; margin-right:10px;"><img src="../../webDocs/assets/images/veggie1.jpeg" /></div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo ut suscipit odit expedita. Reiciendis non,
+                aliquid odio impedit iste itaque praesentium consequuntur vitae pariatur nulla necessitatibus excepturi
+                magnam quidem iusto.
+                <!-- <div style="float:left"><img src="../../webDocs/assets/images/veggie1.jpeg" /></div> -->
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi adipisci dicta voluptatem consectetur
+                itaque repudiandae odio id eveniet, deserunt excepturi iusto enim exercitationem ad optio omnis quisquam
+                dolorem vero incidunt!
+            </div>
+            <div class="box 2">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum facere inventore deserunt, pariatur
+                rem veniam ex similique, voluptas eveniet et dolor illum voluptatem? Dolore omnis, perspiciatis
+                recusandae rerum nisi commodi!
+            </div>
+            <div class="box 3">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero fugit esse quo veniam maxime explicabo
+                velit magnam maiores rem earum, fugiat suscipit aut, accusamus deleniti repellendus, distinctio quam
+                necessitatibus incidunt?
+            </div>
+        </div>
+        <div class="footer">
+            <div>About</div>
+            <div>Contact Us</div>
+            <div>Careers</div>
+        </div>
+    </div>
+
+</body>
+
+</html>
